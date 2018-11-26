@@ -59,6 +59,7 @@ public abstract class LeapArray<T> {
      */
     public LeapArray(int windowLengthInMs, int intervalInSec) {
         AssertUtil.isTrue(windowLengthInMs > 0, "bucket length is invalid: " + windowLengthInMs);
+        //1秒的span，对应到毫秒，就是扩大1000倍
         int intervalInMs = intervalInSec * 1000;
         AssertUtil.isTrue(intervalInSec * 1000 > windowLengthInMs,
             "total time span of the window should be greater than bucket length");
